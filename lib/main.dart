@@ -43,7 +43,7 @@ class SplashView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<SplashViewModel>(
       builder: (context, viewModel, child) {
-        return MyJobcard();
+        return LoginScreen();
         return FutureBuilder(
           future: viewModel.loadData(),
           builder: (context, snapshot) {
