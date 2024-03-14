@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:mtabflutter/AppColors.dart';
 
 class MyJobcard extends StatefulWidget {
   const MyJobcard({super.key});
@@ -12,27 +13,36 @@ class _MyJobcardState extends State<MyJobcard> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-      body: Column(
-        children: [
-          Row(
-              children: [
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          children: [
+            Container(
+              height: 50,
+              color: PRIMARY_COLOR,
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: double.infinity, // Set the height of the container
+                      child: Image.asset(
+                        'assets/images/ic_ms_service_logo_new.PNG', // Replace 'assets/image.jpg' with your image path
+                        fit: BoxFit.fill, // This will make the image cover the entire container
+                      ),
+                    ),
 
-                Image.asset(
-                  'drawable/ic_ms_service_logo_new', // Replace 'my_image' with the name of your image file (without the file extension)
-                  width: 200,
-                  height: 200,
-                ),
-
-                /*Image.asset(
-                  'assets/images/ic_ms_service_logo_new.xml',
-                  width: 200, // Adjust the width as needed
-                  height: 200, // Adjust the height as needed
-                )*/
-
-              ],
-          )
-        ],
+                  /*  Container(
+                      child:  Image.asset(
+                        'assets/images/ic_ms_service_logo_new.PNG',
+                        height: double.infinity, // Adjust the height as needed
+                      ),
+                    )*/
+      
+                  ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

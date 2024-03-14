@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:mtabflutter/AppColors.dart';
 import 'package:mtabflutter/viewmodels/splash_view_model.dart';
+import 'package:mtabflutter/views/myjobcards.dart';
 import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -53,8 +54,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: Column(
 
                                   children: [
-
-
                                     TextField(
                                       controller: userNameCt,
                                       style: TextStyle(
@@ -117,6 +116,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                           child: ElevatedButton(
 
                                             onPressed: () {
+
+                                              Navigator.push(context, MaterialPageRoute(builder: (context) => MyJobcard()));
                                               // Add your button click logic here
                                             },
                                             style: ElevatedButton.styleFrom(
