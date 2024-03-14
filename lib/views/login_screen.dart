@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mtabflutter/viewmodels/splash_view_model.dart';
 import 'package:provider/provider.dart';
@@ -19,46 +20,59 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Container(
         padding: const EdgeInsets.all(10.0),
         width: double.infinity,
+        height: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Add your logo image here
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // Column(
-                //   children: [
-                //     TextField(
-                //       maxLength: 16,
-                //       controller: userNameCt,
-                //       keyboardType: TextInputType.number,
-                //       style: TextStyle(fontSize: 14.0, color: Colors.black, fontWeight: FontWeight.normal),
-                //       decoration: const InputDecoration(
-                //         hintText: 'User Name',
-                //         labelText: 'User Name',
-                //       ),
-                //     ),
-                //     TextField(
-                //       maxLength: 10,
-                //       controller: passwordCt,
-                //       keyboardType: TextInputType.visiblePassword,
-                //       style: TextStyle(fontSize: 14.0, color: Colors.black, fontWeight: FontWeight.normal),
-                //       decoration: const InputDecoration(
-                //         hintText: 'Password',
-                //         labelText: 'Password',
-                //       ),
-                //     ),
-                //   ],
-                //
-                // ),
-                Image.asset(
-                  'assets/images/welcome_maruti.png',
-                  width: 200, // Adjust the width as needed
-                  height: 200, // Adjust the height as needed
-                ),
-              ],
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Container(
+                      child: Column(
+                        children: [
+                          TextField(
+                            decoration: InputDecoration(
+                              hintText: 'Enter your text',
+                              labelText: 'Text',
+                              border: OutlineInputBorder(),
+                            ),
+                            onChanged: (text) {
+                              /* setState(() {
+                                _enteredText = text;
+                              });*/
+                            },
+                          ),
+                          TextField(
+                            decoration: InputDecoration(
+                              hintText: 'Enter your text',
+                              labelText: 'Text',
+                              border: OutlineInputBorder(),
+                            ),
+                            onChanged: (text) {
+                              /* setState(() {
+                                _enteredText = text;
+                              });*/
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  Expanded(
+                    child: Container(
+                      child:    Image.asset(
+                        'assets/images/welcome_maruti.png',
+                        width: 200, // Adjust the width as needed
+                        height: 200, // Adjust the height as needed
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
 
             Row(
@@ -77,6 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
               ],
             )
+
           ],
         ),
 

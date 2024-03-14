@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mtabflutter/viewmodels/splash_view_model.dart';
 import 'package:mtabflutter/views/login_screen.dart';
+import 'package:mtabflutter/views/myjobcards.dart';
 import 'package:mtabflutter/views/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:mtabflutter/AppColors.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-// Set the status bar color
+   // Set the status bar color
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: PRIMARY_COLOR, // Change this color as needed
@@ -36,14 +37,13 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
-
 }
 class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<SplashViewModel>(
       builder: (context, viewModel, child) {
-        return LoginScreen();
+        return MyJobcard();
         return FutureBuilder(
           future: viewModel.loadData(),
           builder: (context, snapshot) {
