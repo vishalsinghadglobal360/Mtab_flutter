@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mtabflutter/viewmodels/splash_view_model.dart';
-import 'package:mtabflutter/views/login_screen.dart';
-import 'package:mtabflutter/views/myjobcards.dart';
 import 'package:mtabflutter/views/splash_screen.dart';
 import 'package:provider/provider.dart';
-import 'package:mtabflutter/AppColors.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized(); // Ensure that Flutter bindings are initialized
@@ -29,30 +26,11 @@ class MyApp extends StatelessWidget {
     //     statusBarIconBrightness: Brightness.light, // Use Brightness.dark for dark icons
     //   ),
     // );
-    return MaterialApp(
-      home: SplashScreen(),
+    return ChangeNotifierProvider(
+    create: (context) => SplashViewModel(),
+    child: MaterialApp(
+    home: SplashScreen(), // SplashScreen is a child of MaterialApp
+    ),
     );
   }
 }
-// class SplashView extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Consumer<SplashViewModel>(
-//       builder: (context, viewModel, child) {
-//         return FutureBuilder(
-//           future: viewModel.loadData(),
-//           builder: (context, snapshot) {
-//             if (snapshot.connectionState == ConnectionState.done) {
-//               // Navigate to the main screen after loading data
-//               // Replace `LoginScreen` with your main screen
-//               return LoginScreen();
-//             } else {
-//               // Show the splash screen while loading data
-//               return SplashScreen();
-//             }
-//           },
-//         );
-//       },
-//     );
-//   }
-// }

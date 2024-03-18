@@ -11,19 +11,19 @@ class SplashRequest {
   }
 
 }
-class SplashResponse {
+class SplashDataResponse {
   final String code;
   final String message;
   final List<SplashResult> result;
 
-  SplashResponse({
+  SplashDataResponse({
     required this.code,
     required this.message,
     required this.result,
   });
 
-  factory SplashResponse.fromJson(Map<String, dynamic> json) {
-    return SplashResponse(
+  factory SplashDataResponse.fromJson(Map<String, dynamic> json) {
+    return SplashDataResponse(
       code: json['code'],
       message: json['message'],
       result: List<SplashResult>.from(

@@ -32,11 +32,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   flex: 9,
                   child: SingleChildScrollView(
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                        Row(
                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                         crossAxisAlignment: CrossAxisAlignment.center,
                          children: [
                            Expanded(
                              child: Container(
