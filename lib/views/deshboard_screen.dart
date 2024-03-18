@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:mtabflutter/AppColors.dart';
 import 'package:mtabflutter/viewmodels/splash_view_model.dart';
+import 'package:mtabflutter/views/myjobcards.dart';
 import 'package:provider/provider.dart';
+
 
 class DeshBoard extends StatefulWidget {
   const DeshBoard({super.key});
@@ -128,21 +130,28 @@ class _DeshBoardState extends State<DeshBoard> {
                   children: [
                     Row(
                       children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset('assets/images/jobcard.png',
-                                height: 100, width: 90, fit: BoxFit.fill),
-                            Container(
-                                alignment: Alignment.center,
-                                width: 250,
-                                margin: EdgeInsets.only(top: 10),
-                                child: Text("MY Jobcards",textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize:
-                                            30 /*,fontWeight: FontWeight.bold*/)))
-                          ],
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => MyJobcardn()));
+                          },
+                          child: Container(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset('assets/images/jobcard.png',
+                                    height: 100, width: 90, fit: BoxFit.fill),
+                                Container(
+                                    alignment: Alignment.center,
+                                    width: 250,
+                                    margin: EdgeInsets.only(top: 10),
+                                    child: Text("MY Jobcards",textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize:
+                                                30 /*,fontWeight: FontWeight.bold*/)))
+                              ],
+                            ),
+                          ),
                         ),
                         Center(
                           child: Container(
@@ -227,7 +236,7 @@ class _DeshBoardState extends State<DeshBoard> {
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize:
-                                              30 /*,fontWeight: FontWeight.bold*/)))
+                                              30 ,fontWeight: FontWeight.bold)))
                             ],
                           ),
                           Center(
@@ -262,7 +271,7 @@ class _DeshBoardState extends State<DeshBoard> {
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize:
-                                              30 /*,fontWeight: FontWeight.bold*/)))
+                                              30 ,fontWeight: FontWeight.bold)))
                             ],
                           ),
                           Center(
@@ -297,7 +306,7 @@ class _DeshBoardState extends State<DeshBoard> {
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize:
-                                              30 /*,fontWeight: FontWeight.bold*/)))
+                                              30 ,fontWeight: FontWeight.bold)))
                             ],
                           ),
                         ],

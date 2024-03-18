@@ -8,6 +8,8 @@ import 'package:mtabflutter/views/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:mtabflutter/AppColors.dart';
 
+import 'Test.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized(); // Ensure that Flutter bindings are initialized
 
@@ -20,7 +22,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -44,7 +45,7 @@ class SplashView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<SplashViewModel>(
       builder: (context, viewModel, child) {
-        return DeshBoard();
+        return LoginScreen();
         //return LoginScreen();
         return FutureBuilder(
           future: viewModel.loadData(),

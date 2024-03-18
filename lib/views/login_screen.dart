@@ -7,6 +7,8 @@ import 'package:mtabflutter/viewmodels/splash_view_model.dart';
 import 'package:mtabflutter/views/myjobcards.dart';
 import 'package:provider/provider.dart';
 
+import 'deshboard_screen.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
   @override
@@ -30,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
 
                 Flexible(
-                  flex:9,
+                  flex:8,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -117,7 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                                             onPressed: () {
 
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => MyJobcard()));
+                                              Navigator.push(context, MaterialPageRoute(builder: (context) => DeshBoard()));
                                               // Add your button click logic here
                                             },
                                             style: ElevatedButton.styleFrom(
