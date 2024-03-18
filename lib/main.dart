@@ -23,41 +23,36 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-   // Set the status bar color
-    SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(
-        statusBarColor: PRIMARY_COLOR, // Change this color as needed
-        statusBarIconBrightness: Brightness.light, // Use Brightness.dark for dark icons
-      ),
-    );
+    // SystemChrome.setSystemUIOverlayStyle(
+    //   SystemUiOverlayStyle(
+    //     statusBarColor: STATUS_BAR_COLOR, // Change this color as needed
+    //     statusBarIconBrightness: Brightness.light, // Use Brightness.dark for dark icons
+    //   ),
+    // );
     return MaterialApp(
-      home: ChangeNotifierProvider(
-        create: (context) => SplashViewModel(),
-        child: SplashView(),
-      ),
+      home: SplashScreen(),
     );
   }
 }
-class SplashView extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Consumer<SplashViewModel>(
-      builder: (context, viewModel, child) {
-        return LoginScreen();
-        return FutureBuilder(
-          future: viewModel.loadData(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              // Navigate to the main screen after loading data
-              // Replace `LoginScreen` with your main screen
-              return LoginScreen();
-            } else {
-              // Show the splash screen while loading data
-              return SplashScreen();
-            }
-          },
-        );
-      },
-    );
-  }
-}
+// class SplashView extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Consumer<SplashViewModel>(
+//       builder: (context, viewModel, child) {
+//         return FutureBuilder(
+//           future: viewModel.loadData(),
+//           builder: (context, snapshot) {
+//             if (snapshot.connectionState == ConnectionState.done) {
+//               // Navigate to the main screen after loading data
+//               // Replace `LoginScreen` with your main screen
+//               return LoginScreen();
+//             } else {
+//               // Show the splash screen while loading data
+//               return SplashScreen();
+//             }
+//           },
+//         );
+//       },
+//     );
+//   }
+// }
